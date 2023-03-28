@@ -32,7 +32,7 @@
 //   )
 // }
 
-import Bulbasaur from ./components/Pokemon.jsx
+import Bulbasaur from './components/Pokemon.jsx';
 
 function App() {
   return (
