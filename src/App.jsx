@@ -46,8 +46,10 @@ function App() {
         name={pokemonList[pokemonIndex].name}
         imgSrc={pokemonList[pokemonIndex].imgSrc}
       />
-      <button onClick={decrement}>Précédent</button>
-      <button onClick={increment}>Suivant</button>
+      {pokemonIndex > 0 ? <button onClick={decrement}>Précédent</button> : null}
+      {pokemonIndex < pokemonList.length - 1 ? (
+        <button onClick={increment}>Suivant</button>
+      ) : null}
     </div>
   );
 }
