@@ -30,27 +30,38 @@ const pokemonList = [
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
-  const handleClick = () => {
-    setPokemonIndex(pokemonIndex + 1);
+  const decrement = () => {
+    if (pokemonIndex > 0) {
+      setPokemonIndex(pokemonIndex - 1);
+    }
+  };
+  const increment = () => {
+    if (pokemonIndex < pokemonList.length - 1) {
+      setPokemonIndex(pokemonIndex + 1);
+    }
   };
   return (
     <div>
-      <button onClick={handleClick}>Précédent</button>
-      <PokemonCard name={pokemonList[0].name} imgSrc={pokemonList[0].imgSrc} />
-      <button onClick={handleClick}>Suivant</button>
+      <PokemonCard
+        name={pokemonList[pokemonIndex].name}
+        imgSrc={pokemonList[pokemonIndex].imgSrc}
+      />
+      <button onClick={decrement}>Précédent</button>
+      <button onClick={increment}>Suivant</button>
     </div>
   );
 }
 
 export default App;
 
-// const [count, setCount] = useState(0);
+// function App() {
+//   const [user, setUser] = useState({name: "Bob"});
 
 //   const handleClick = () => {
-//     setCount(count + 1)
+//     setUser({name: "Alice"})
 //   }
 
 //   return (<div>
-//     <p>{count}</p>
+//     <p>{user.name}</p>
 //     <button onClick={handleClick}>Click</button>
 //   </div>);
