@@ -1,22 +1,17 @@
 import PropTypes from 'prop-types';
 
 function PokemonCard({ name, imgSrc }) {
-  // const pokemon = pokemonList[0];
-  if (imgSrc) {
-    return (
-      <figure className="card">
-        <img src={imgSrc} alt={name} className="card-img" />
-        <figcaption>{name}</figcaption>
-      </figure>
-    );
-  } else {
-    return (
-      <div>
-        <p>???</p>
-        <figcaption>{name}</figcaption>
-      </div>
-    );
-  }
+  return imgSrc ? (
+    <figure className="card">
+      <img src={imgSrc} alt={name} className="card-img" />
+      <figcaption>{name}</figcaption>
+    </figure>
+  ) : (
+    <div>
+      <p>???</p>
+      <figcaption>{name}</figcaption>
+    </div>
+  );
 }
 
 PokemonCard.propTypes = {
