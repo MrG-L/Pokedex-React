@@ -31,16 +31,18 @@ const pokemonList = [
   },
 ];
 
-function pokemon(name) {
-  <div> {pokemonList.map((pokemon) => (
-          <button>{pokemonList[pokemonIndex].name}</button>)
-  </div>
-}
-
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
   return (
     <div>
+      {pokemonList.map((pokemon, index) => (
+        <NavBar
+          key={pokemon.name}
+          nomDuPokemon={pokemon.name}
+          indexDuPokemon={index}
+          setStateDuPokemon={setPokemonIndex}
+        />
+      ))}
       <PokemonCard
         name={pokemonList[pokemonIndex].name}
         imgSrc={pokemonList[pokemonIndex].imgSrc}

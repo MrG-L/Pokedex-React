@@ -61,3 +61,10 @@
   border-radius: inherit;
   box-shadow: inherit;
 }
+
+.bouton {
+  display: inline;
+  flex-direction: row;
+  background-color: rgb(64, 196, 196);
+  border: 0.2em;
+}
