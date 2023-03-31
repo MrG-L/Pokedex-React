@@ -13,6 +13,7 @@ function NavBar({ pokemonIndex, setPokemonIndex, pokemonList }) {
     // }
     setPokemonIndex(pokemonIndex + 1);
   };
+
   return (
     <div>
       {pokemonIndex > 0 ? <button onClick={decrement}>Précédent</button> : null}
