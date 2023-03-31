@@ -26,8 +26,16 @@ const pokemonList = [
   },
   {
     name: 'mew',
+    imgSrc:
+      'https://archives.bulbagarden.net/media/upload/thumb/9/9a/0151Mew.png/375px-0151Mew.png',
   },
 ];
+
+function pokemon(name) {
+  <div> {pokemonList.map((pokemon) => (
+          <button>{pokemonList[pokemonIndex].name}</button>)
+  </div>
+}
 
 function App() {
   const [pokemonIndex, setPokemonIndex] = useState(0);
@@ -36,11 +44,6 @@ function App() {
       <PokemonCard
         name={pokemonList[pokemonIndex].name}
         imgSrc={pokemonList[pokemonIndex].imgSrc}
-      />
-      <NavBar
-        pokemonIndex={pokemonIndex}
-        setPokemonIndex={setPokemonIndex}
-        pokemonList={pokemonList}
       />
     </div>
   );
